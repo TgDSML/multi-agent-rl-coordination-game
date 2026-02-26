@@ -92,8 +92,6 @@ def run(total_episodes=5000, alpha=0.1, gamma=0.95, seed=1, verbose_every=250):
     return mean_reward_X, mean_reward_Y, q_trace
 
 if __name__ == "__main__":
-    run(total_episodes=5000)
-
     mean_reward_X, mean_reward_Y, q_trace = run(total_episodes=5000)
     plot_mean_rewards(mean_reward_X, mean_reward_Y)
     plot_q_traces(q_trace)
