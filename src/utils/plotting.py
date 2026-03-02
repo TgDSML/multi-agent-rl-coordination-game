@@ -45,3 +45,21 @@ def plot_mean_rewards(mean_reward_X, mean_reward_Y):
     plt.legend()
     plt.grid(True)
     plt.show()
+    
+def plot_mean_rewards_comparison(no_X, no_Y, nb_X, nb_Y, window=50):
+    smooth_no_X = moving_average(no_X, window)
+    smooth_no_Y = moving_average(no_Y, window)
+    smooth_nb_X = moving_average(nb_X, window)
+    smooth_nb_Y = moving_average(nb_Y, window)
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(smooth_no_X, label="No-info X", linestyle="--")
+    plt.plot(smooth_no_Y, label="No-info Y", linestyle="--")
+    plt.plot(smooth_nb_X, label="Neighbor-info X")
+    plt.plot(smooth_nb_Y, label="Neighbor-info Y")
+    plt.xlabel("Episode")
+    plt.ylabel("Mean reward")
+    plt.title("No-Info vs Neighbor-Info Learning")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
