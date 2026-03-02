@@ -103,6 +103,6 @@ def run(total_episodes=5000, alpha=0.1, gamma=0.95, seed=1, verbose_every=250):
     
 if __name__ == "__main__":
     mean_X, mean_Y, q_trace = run(total_episodes=5000)
-    plot_q_traces(q_trace)
-    plot_mean_rewards(mean_X, mean_Y)
+    plot_q_traces(q_trace, scenario_label="With Info")
+    plot_mean_rewards(mean_X, mean_Y, scenario_label="With Info", window=50)
             
